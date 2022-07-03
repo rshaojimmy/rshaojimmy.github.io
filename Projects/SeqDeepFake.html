@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Text2Human">
+    <meta name="description" content="SeqDeepFake">
 
     <title>SeqDeepFake - Project Page</title>
 
@@ -233,9 +233,9 @@
                 Figure below shows the architecture of proposed Seq-DeepFake Transformer (<b>SeqFakeFormer</b>). 
                 We first feed the face image into a CNN to learn features of spatial manipulation regions, 
                 and extract their <b>spatial relation</b> via self-attention modules in the encoder. 
-                Then <b>sequential relation</b> based on features of spatial relation is modeled to detect 
-                the sequential facial manipulation. A spatial enhanced cross-attention module is integrated 
-                into the decoder, contributing to a more effective cross-attention.
+                Then <b>sequential relation</b> based on features of spatial relation is modeled through 
+                cross-attention modules deployed in the decoder with an auto-regressive mechanism, detecting the sequential facial manipulation. 
+                A spatial enhanced cross-attention module is integrated into the decoder, contributing to a more effective cross-attention.
             </p>
         <br>
             <div class="details" style="text-align: center" ;>

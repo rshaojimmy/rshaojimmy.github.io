@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MultiModal-DeepFake">
+
+    <title>MultiModal-DeepFake - Project Page</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <link id="theme-style" rel="stylesheet" href="./assets/MultiModal-DeepFake/css/multimodal-deepfake_main.css">
+    <link id="theme-style" rel="stylesheet" href="./assets/MultiModal-DeepFake/css/bulma-carousel.min.css">
+    <link id="theme-style" rel="stylesheet" href="./assets/MultiModal-DeepFake/css/bulma-slider.min.css">
+
+    <!-- <script type="module" src="./assets/js/background_box.js"></script> -->
+    <script type="module" src="./assets/MultiModal-DeepFake/js/background_star.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/MultiModal-DeepFake/js/bulma-carousel.min.js"></script>
+    <script src="./assets/MultiModal-DeepFake/js/bulma-slider.min.js"></script>
+    <script src="./assets/MultiModal-DeepFake/js/index.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-D41DLSC2BJ');
+    </script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <section class="section intro-section">
+            <div class="intro-container" style="text-align: center;">
+                <div class="header">
+                    <h3 class="papername">DGM4: Detecting and Grounding Multi-Modal Media Manipulation
+                    </h3>
+                </div>
+                <ul class="list-unstyled name-list" style="font-size:large;">
+                    <li><a href="https://rshaojimmy.github.io/" target="_blank">Rui Shao<sup>1,2</sup></a></li>
+                    <li><a href="https://tianxingwu.github.io/" target="_blank">Tianxing Wu<sup>2</sup></a></li>
+                    <li><a href="https://liuziwei7.github.io/" target="_blank">Ziwei Liu<sup>2</sup></a>✉</li>
+                </ul>
+                <ul class="list-unstyled name-list" style="font-size:large;">
+                    <li><sup>1</sup>School of Computer Science and Technology, Harbin Institute of Technology (Shenzhen)</li>
+                    <br>
+                    <li><sup>2</sup>S-Lab, Nanyang Technological University</li>
+                    <!-- <li><a href="https://www.mmlab-ntu.com/index.html" target="_blank">S-Lab, Nanyang Technological University</a></li> -->
+                </ul>
+                <div class="title"> <a href="https://cvpr2023.thecvf.com/" target="_blank">CVPR 2023</a></div>
+                <br>
+                <div style="font-size:large;">
+                    <!-- <strong>TL;DR:</strong> In this work, we focus on detecting DeepFake manipulation sequences rather than binary lables. -->
+                    <strong>TL;DR:</strong> Different from existing single-modal forgery detection tasks, 
+                    <b>DGM<sup>4</sup></b> performs real/fake classification on image-text pairs, 
+                    and further attempts to <b>detect</b> fine-grained manipulation types and <b>ground</b> manipulated image bboxes and text tokens. 
+                    <!-- They provide more comprehensive interpretation and deeper understanding about manipulation detection besides the binary classification. (FS: Face Swap Manipulation, FA: Face Attribute Manipulation, TS: Text Swap Manipulation, TA: Text Attribute Manipulation) -->
+                </div>
+
+            </div>
+            <br>
+            <div class="intro-container" style="text-align: center;">
+                <!-- <img src='./assets/MultiModal-DeepFake/images/problem_definition.gif' style="width: 80%" /> -->
+                <!-- <img src='./assets/MultiModal-DeepFake/images/problem_definition.png' onmouseover="this.src='./assets/MultiModal-DeepFake/images/problem_definition.gif';" onmouseout="this.src='./assets/MultiModal-DeepFake/images/problem_definition.png';"  style="width: 80%" /> -->
+                <img src='./assets/MultiModal-DeepFake/images/intro_v9.jpg' style="width: 80%" />
+            </div>
+        </section>
+
+        <!-- Paper video. -->
+        <section class="section intro-section">
+            <div class="section-title">
+                Video
+            </div>
+            <div class="details" style="text-align: center;">
+                <div class="publication-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/EortO0cqnGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        <!-- / Paper video.   -->
+
+        <section class='section'>
+            <div class="section-title">
+                Abstract
+            </div>
+            <div class="details" style="text-align: justify" ;>
+                Misinformation has become a pressing issue. Fake media, in both visual and textual forms, 
+                is widespread on the web. While various deepfake detection and text fake news detection methods have been proposed, 
+                they are only designed for single-modality forgery based on binary classification, 
+                let alone analyzing and reasoning subtle forgery traces across different modalities. 
+                In this paper, we highlight a new research problem for multi-modal fake media, 
+                namely <b>D</b>etecting and <b>G</b>rounding <b>M</b>ulti-<b>M</b>odal <b>M</b>edia <b>M</b>anipulation 
+                (<b>DGM<sup>4</sup></b>). <b>DGM<sup>4</sup></b> aims to not only detect the authenticity of multi-modal media, 
+                but also ground the manipulated content (<i>i.e.,</i> image bounding boxes and text tokens), 
+                which requires deeper reasoning of multi-modal media manipulation. To support a large-scale investigation, 
+                we construct the first <b>DGM<sup>4</sup></b> dataset, where image-text pairs are manipulated by various approaches, 
+                with rich annotation of diverse manipulations. 
+                Moreover, we propose a novel <b>H</b>ier<b>A</b>rchical <b>M</b>ulti-modal <b>M</b>anipulation r<b>E</b>asoning t<b>R</b>ansformer (<b>HAMMER</b>) 
+                to fully capture the fine-grained interaction between different modalities. <b>HAMMER</b> performs 
+                <b>1)</b> manipulation-aware contrastive learning between two uni-modal encoders as shallow manipulation reasoning, and 
+                <b>2)</b> modality-aware cross-attention by multi-modal aggregator as deep manipulation reasoning. 
+                Dedicated manipulation detection and grounding heads are integrated from shallow to deep levels based on the interacted multi-modal information. 
+                Finally, we build an extensive benchmark and set up rigorous evaluation metrics for this new research problem. 
+                Comprehensive experiments demonstrate the superiority of our model; several valuable observations are also revealed to facilitate future research in multi-modal media manipulation.
+                
+            </div>
+        </section>
+
+        <section class='section links-section'>
+            <div class='section-title'>
+                Links
+            </div>
+            <div class='details links-table'>
+                <table>
+                    <tr>
+                        <td>
+                            <div class='links-container'>
+                                <a href='https://github.com/rshaojimmy/MultiModal-DeepFake' target="_blank"><img class='links-cover'
+                                        src='./assets/MultiModal-DeepFake/images/PDF_icon.svg' alt='PDF Cover' style="width: 25%"></a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class='links-container'>
+                                <a href='https://github.com/rshaojimmy/MultiModal-DeepFake' target="_blank"><img class='links-cover'
+                                        src='./assets/MultiModal-DeepFake/images/github.png' alt='github icon'></a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class='links-container'>
+                                <a href='https://lifehkbueduhk-my.sharepoint.com/:f:/g/personal/16483782_life_hkbu_edu_hk/En7oPhLwfNZLr4tY1H9xP94BEukx41MAJh7TCFkPcTRL5Q?e=8e1gKf' target="_blank"><img class='links-cover'
+                                        src='./assets/MultiModal-DeepFake/images/onedrive_icon.png' alt='onedrive icon'></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://github.com/rshaojimmy/MultiModal-DeepFake' target="_blank">Paper</a></td>
+                        <td><a href='https://github.com/rshaojimmy/MultiModal-DeepFake' target="_blank">Code</a></td>
+                        <td><a href='https://lifehkbueduhk-my.sharepoint.com/:f:/g/personal/16483782_life_hkbu_edu_hk/En7oPhLwfNZLr4tY1H9xP94BEukx41MAJh7TCFkPcTRL5Q?e=8e1gKf' target="_blank">Dataset</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+    <br>
+        <section class="section">
+            <div class="section-title">
+                DGM<sup>4</sup> Dataset
+            </div>
+            <div class="details" style="text-align: center;">
+                <img class='links-cover' src='./assets/MultiModal-DeepFake/images/statistics_v12.jpg' , width="80%">
+            </div>
+
+        <br>
+            <p>We present <b>DGM<sup>4</sup></b>, a large-scale dataset for studying machine-generated multi-modal media manipulation. 
+                The dataset specifically focus on <t>human-centric news</t>, in consideration of its great public influence.
+                It consists a total of <b>230k</b> news samples, including 77,426 pristine image-text pairs and 152,574 manipulated pairs. 
+                The manipulated pairs contain:
+            </p>
+            <ul>
+                <!-- <li>66,722 <span style="color:#5a9bd4">Face Swap Manipulations (FS)</span></li>
+                <li>56,411 <span style="color:#9ec2e7">Face Attribute Manipulations (FA)</span></li>
+                <li>43,546 <span style="color:#febf04">Text Swap Manipulations (TS)</span></li>
+                <li>18,588 <span style="color:#feda65">Text Attribute Manipulations (TA)</span></li> -->
+                <li>66,722 Face Swap Manipulations <b>(FS)</b></li>
+                <li>56,411 Face Attribute Manipulations <b>(FA)</b></li>
+                <li>43,546 Text Swap Manipulations <b>(TS)</b></li>
+                <li>18,588 Text Attribute Manipulations <b>(TA)</b></li>
+                <!-- <ul>
+                    <li><b>35,166</b> number of face images</li>
+                    <li><b>28</b> types of manipulation sequences</li>
+                </ul> -->
+                <!-- <li><span style="color:#0a939d">Sequential facial attributes manipulation</span></li> -->
+                <!-- <ul>
+                    <li><b>49,920</b> number of face images</li>
+                    <li><b>26</b> types of manipulation sequences</li>
+                </ul> -->
+            </ul>
+            <p>
+                Where 1/3 of the manipulated images and 1/2 of the manipulated text are combined together to form 32,693 mixed-manipulation pairs.
+            </p>
+
+            <p>
+                Some sample images and their annotations are shown below. 
+                For more information about the data structure, annotation details and other properties about the dataset, 
+                you can refer to our 
+                <a href="https://github.com/rshaojimmy/MultiModal-DeepFake" target="_blank">github page</a></li>.
+            </p>
+        <br>
+            <!-- <div class="details" style="text-align: center" ;>
+                <img src='./assets/MultiModal-DeepFake/images/supp_dataset_v2.jpg' style="width: 90%" />
+            </div> -->
+            <section class="section intro-section">
+                <div id="carouselExampleIndicators" class="video-container">
+                    <div id="results-carousel" class="carousel is-dark results-carousel video-container-inner">
+
+                        <div class="video item">
+                            <img src='./assets/MultiModal-DeepFake/images/dataset_1.PNG'
+                            style="width: 100%">
+                            <!-- <p class="video-caption">
+                                <span style="color:#0a939d">Bangs-Smiling</span>
+                            </p> -->
+                        </div>
+
+                        <div class="video item">
+                            <img src='./assets/MultiModal-DeepFake/images/dataset_2.PNG'
+                            style="width: 100%">
+                            <!-- <p class="video-caption">
+                                <span style="color:#AE2011">eyebrow-nose</span>
+                            </p> -->
+                        </div>
+
+                        <div class="video item">
+                            <img src='./assets/MultiModal-DeepFake/images/dataset_3.PNG'
+                            style="width: 100%">
+                            <!-- <p class="video-caption">
+                                <span style="color:#0a939d">Eyeglasses</span>
+                            </p> -->
+                        </div>         
+
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class='section'>
+            <div class="section-title">
+                Method
+            </div>
+            <strong><span style="font-size:larger">Proposed HAMMER</span></strong>
+            <p>
+                Figure below shows the architecture of proposed <b>H</b>ier<b>A</b>rchical <b>M</b>ulti-modal <b>M</b>anipulation r<b>E</b>asoning t<b>R</b>ansformer (<b>HAMMER</b>).
+                It 1) aligns image and text embeddings through manipulation-aware contrastive learning 
+                between Image Encoder <i>E<sub>v</sub></i>, Text Encoder <i>E<sub>t</sub></i> in <b>shallow manipulation reasoning</b> and 
+                2) further aggregates multi-modal embeddings via modality-aware cross-attention 
+                of Multi-Modal Aggregator <i>F</i> in <b>deep manipulation reasoning</b>. 
+                Based on the interacted multi-modal embeddings in different levels, 
+                various manipulation detection and grounding heads (Multi-Label Classifier 
+                <i>C<sub>m</sub></i>, Binary Classifier <i>C<sub>b</sub></i>, BBox Detector <i>D<sub>v</sub></i>, and Token Detector <i>D<sub>t</sub></i>) 
+                are integrated to perform their tasks hierarchically.
+                <!-- Figure below shows the architecture of proposed Seq-DeepFake Transformer (<b>SeqFakeFormer</b>). 
+                We first feed the face image into a CNN to learn features of spatial manipulation regions, 
+                and extract their <b>spatial relation</b> via self-attention modules in the encoder. 
+                Then <b>sequential relation</b> based on features of spatial relation is modeled through 
+                cross-attention modules deployed in the decoder with an auto-regressive mechanism, detecting the sequential facial manipulation. 
+                A spatial enhanced cross-attention module is integrated into the decoder, contributing to a more effective cross-attention. -->
+            </p>
+        <br>
+            <div class="details" style="text-align: center" ;>
+                <img src='./assets/MultiModal-DeepFake/images/framework_v6.jpg' style="width: 90%" />
+            </div>
+
+
+            
+            <br>
+            <br>
+            <strong><span style="font-size:larger">Benchmark results</span></strong>
+            <p>
+                Based on the DGM<sup>4</sup> dataset, we provide the first benchmark for evaluating model performance on our proposed task.
+                To validate the effectiveness of our HAMMER model, we adapt SOTA multi-modal learning methods to our DGM<sup>4</sup> setting for full-modal comparision, 
+                and further adapt deepfake detection and sequence tagging methods for single-modal comparison.
+                As shown in the tables, HAMMER outperforms all multi-modal and single-modal methods in all sub-tasks, under all evaluation metrics.
+                <!-- We tabulate the first benchmark for detecting sequential facial manipulation in Table 1~3. 
+                SeqFakeFormer outperforms all SOTA deepfake detection methods in both manipulation types, 
+                under two evaluation metrics. -->
+            </p>
+
+            <br>
+
+            <div class="details" style="text-align: center" ;>
+                <img src='./assets/MultiModal-DeepFake/images/table_2.jpg' style="width: 75%" />
+            </div>
+            <br>
+            <div class="details" style="text-align: center" ;>
+                <img src='./assets/MultiModal-DeepFake/images/table_3.jpg' style="width: 40%" />
+                <img src='./assets/MultiModal-DeepFake/images/table_4.jpg' style="width: 40%" />
+            </div>
+            
+
+            <br>
+            <br>
+            <strong><span style="font-size:larger">Visualization results</span></strong>
+            <br>
+            <p>
+                <b>Visualization of detection and grounding results.</b> Ground truth annotations are in <span style="color:#ff0000"><b>red</b></span>, 
+                and prediction results are in <span style="color:#00b0f0"><b>blue</b></span>. The visualization results show that 
+                our method can accurately <b>ground</b> the manipulated bboxes & text tokens, and successfully <b>detect</b> the manipulation types.
+            </p>
+            <br>
+            <div class="details" style="text-align: center" ;>
+                <img src='./assets/MultiModal-DeepFake/images/visualization.png'
+                            style="width: 80%">
+            </div>
+            
+            <br>
+            <p>
+                <b>Visualization of attention map.</b> 
+                We plot Grad-CAM visualizations with respect to specifc text tokens (in <span style="color:#00b200"><b>green</b></span>) for all the four manipulated types.
+                For FS and FA, we visualize the attention map regarding some key words related to image manipulation. 
+                For TS and TA, we visualize the attention map regarding the manipulated text tokens. 
+                The attention maps show our model can use text to facilitate locating manipulated image regions, 
+                and capture subtle semantic inconsistencies between the two modalities to tackle DGM<sup>4</sup>.
+            </p>
+            <br>
+            <div class="details" style="text-align: center" ;>
+                <img src='./assets/MultiModal-DeepFake/images/attn.png'
+                            style="width: 80%">
+            </div>
+
+
+
+            
+
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                Bibtex
+            </div>
+            <div class="details">
+                <pre>
+@inproceedings{shao2022dgm4,
+    title={Detecting and Grounding Multi-Modal Media Manipulation},
+    author={Shao, Rui and Wu, Tianxing and Liu, Ziwei},
+    booktitle={IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year={2023}
+}
+                </pre>
+            </div>
+        </section>
+
+
+        <section class='section'>
+            <div class="section-title">
+                Acknowledgement
+            </div>
+            <!-- <p>This study is supported by NTU NAP, MOE AcRF Tier 2 (T2EP20221-0033), and under the RIE2020 Industry
+                Alignment Fund – Industry Collaboration Projects (IAF-ICP) Funding Initiative, as well as cash and
+                in-kind contribution from the industry partner(s).</p> -->
+            <p>We referred to the project page of <a href="https://hongfz16.github.io/projects/AvatarCLIP.html">AvatarCLIP</a> when creating this
+                project page.</p>
+        </section>
+
+    </div>
+
+
+</body>
+
+</html>

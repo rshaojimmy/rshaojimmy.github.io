@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JiuTian-LION">
+
+    <title>JiuTian-LION - Project Page</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <link id="theme-style" rel="stylesheet" href="./assets/SeqDeepFake/css/seqdeepfake_main.css">
+    <link id="theme-style" rel="stylesheet" href="./assets/SeqDeepFake/css/bulma-carousel.min.css">
+    <link id="theme-style" rel="stylesheet" href="./assets/SeqDeepFake/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- <script type="module" src="./assets/js/background_box.js"></script> -->
+    <script type="module" src="./assets/SeqDeepFake/js/background_star.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/SeqDeepFake/js/bulma-carousel.min.js"></script>
+    <script src="./assets/SeqDeepFake/js/bulma-slider.min.js"></script>
+    <script src="./assets/SeqDeepFake/js/index.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-D41DLSC2BJ');
+    </script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <section class="section intro-section">
+            <div class="intro-container" style="text-align: center;">
+                <div class="header">
+                    <h3 class="papername"> <img src="./assets/JiuTian-LION/images/LION_logo.png" class="icon-text">LION
+                        : Empowering
+                        Multimodal Large Language Model with Dual-Level Visual
+                        Knowledge
+                    </h3>
+                </div>
+                <ul class="list-unstyled name-list" style="font-size:large;">
+                    <li><a href="https://scholar.google.com/citations?user=Mpg0w3cAAAAJ" target="_blank">Gongwei
+                            Chen</a></li>
+                    <li><a href="https://www.slywiki.cn/" target="_blank">Leyang Shen</a></li>
+                    <li><a href="https://rshaojimmy.github.io/" target="_blank">Rui Shao†</a></li>
+                    <li><a href="https://xiang-deng-dl.github.io/" target="_blank">Xiang
+                            Deng</a></li>
+                    <li><a href="https://liqiangnie.github.io/" target="_blank">Liqiang Nie†</a></li>
+                </ul>
+                <ul class="list-unstyled name-list" style="font-size:large;">
+                    <li>School of Computer Science and Technology, Harbin Institute of Technology, Shenzhen</li>
+                </ul>
+                <div class="small">
+                    †Corresponding author
+                </div>
+
+                <div>
+                    <div class="link-container">
+                        <a href="#" class="link-button"><i class="fas fa-file"></i> Paper</a>
+                        <!-- <a href="your-link-to-arxiv" class="link-button"><i class="fas fa-book"></i> arXiv</a> -->
+                        <a href="#" class="link-button"><i class="fas fa-video"></i> Video</a>
+                        <a href="https://github.com/rshaojimmy/JiuTian" class="link-button"><i
+                                class="fab fa-github"></i> Github</a>
+                        <!-- <a href="your-link-to-data" class="link-button"><i class="fas fa-database"></i> Data</a> -->
+                    </div>
+                </div>
+
+                <div class="my-3">
+                    <div class="mt-4" style="font-size:large;"><strong>TL;DR:</strong> In this work, we enhance MLLMs by integrating fine-grained spatial-aware visual knowledge and high-level semantic visual evidence, boosting image-level and region-level task capabilities and alleviating hallucinations. </div>
+
+                </div>
+                <br>
+                <div class="intro-container" style="text-align: center;">
+                    <!-- <img src='./assets/SeqDeepFake/images/problem_definition.gif' style="width: 80%" /> -->
+                    <!-- <img src='./assets/SeqDeepFake/images/problem_definition.png' onmouseover="this.src='./assets/SeqDeepFake/images/problem_definition.gif';" onmouseout="this.src='./assets/SeqDeepFake/images/problem_definition.png';"  style="width: 80%" /> -->
+                    <img src='./assets/JiuTian-LION/images/LION-Introduction.jpg' style="width: 60%" />
+                </div>
+        </section>
+
+        <section class='section'>
+            <div class="section-title">
+                Abstract
+            </div>
+            <div class="details" style="text-align: justify" ;>
+                Multimodal Large Language Models (MLLMs) have endowed LLMs with the ability to perceive and understand
+                multi-modal signals. However, most of the existing MLLMs mainly adopt vision encoders pretrained on
+                coarsely aligned image-text pairs, leading to insufficient extraction and reasoning of visual knowledge.
+                To address this issue, we devise a dual-<b>L</b>evel v<b>I</b>sual kn<b>O</b>wledge e<b>N</b>hanced
+                Multimodal Large Language Model (<b>LION</b>), which empowers the MLLM by injecting visual knowledge in
+                two levels. <b>1) Progressive incorporation of fine-grained spatial-aware visual knowledge</b>. We
+                design a vision aggregator cooperated with region-level vision-language (VL) tasks to incorporate
+                fine-grained spatial-aware visual knowledge into the MLLM. To alleviate the conflict between image-level
+                and region-level VL tasks during incorporation, we devise a dedicated stage-wise instruction-tuning
+                strategy with mixture-of-adapters. This progressive incorporation scheme contributes to the mutual
+                promotion between these two kinds of VL tasks. <b>2) Soft prompting of high-level semantic visual
+                    evidence</b>. We facilitate the MLLM with high-level semantic visual evidence by leveraging diverse
+                image tags. To mitigate the potential influence caused by imperfect predicted tags, we propose a soft
+                prompting method by embedding a learnable token into the tailored text instruction. Comprehensive
+                experiments on several multi-modal benchmarks demonstrate the superiority of our model (<i>e.g.</i>,
+                improvement of 5% accuracy on VSR and 3% CIDEr on TextCaps over InstructBLIP, 5% accuracy on RefCOCOg
+                over Kosmos-2).
+
+            </div>
+        </section>
+
+        <br>
+
+        <section class='section'>
+            <div class="section-title">
+                Method
+            </div>
+            <strong><span style="font-size:larger">Model Architecture</span></strong>
+            <p>
+                As shown in the figure below, LION model 1) extracts holistic visual features from Q-Former, and
+                combines them with fine-grained spatial-aware visual features from the vision aggregator. 2) The frozen
+                recognize anything model (RAM) produces image tags, which are cooperated with soft prompt to provide
+                complementary high-level semantic visual evidences. 3) The Mixture-of-Adapters with a router in the
+                frozen LLM dynamically fuses visual knowledge learned from different visual branches and LLM adapters
+                based on the task types (image-level and region-level).
+            </p>
+            <br>
+            <div class="details" style="text-align: center" ;>
+                <img src='./assets/JiuTian-LION/images/LION-Method.jpg' style="width: 90%" />
+            </div>
+            <br>
+            <strong><span style="font-size:larger">Stage-wise Training Strategy</span></strong>
+            <p>
+                In order to address the tasks conflicts between region-level and image-level, we adopt a stage-wise
+                instruction-tuning strategy.
+            <ul>
+                <li>
+                    <b>Stage 1:</b> We instruction-tune Qformer and adapter on image-level vision-language (VL) tasks.
+                </li>
+                <li>
+                    <b>Stage 2:</b> We instruction-tune vision aggregator (VA), MLP and adapter on region-level VL
+                    tasks.
+                </li>
+                <li>
+                    <b>Stage 3:</b> The Mixture-of-Adapters is devised to form a unified model for instruction-tuning on
+                    all VL tasks.
+                </li>
+
+            </ul>
+            </p>
+            <div class="details" style="text-align: center" ;>
+                <img src='./assets/JiuTian-LION/images/LION-Stagewise.jpg' style="max-width: 600px;" />
+            </div>
+        </section>
+        <section class='section'>
+            <div class="section-title">
+                Results
+            </div>
+            <strong><span style="font-size:larger">Benchmark results</span></strong>
+            <p>
+                We evaluate LION on a object hallucination benchmark(<a
+                    href="https://github.com/AoiDragon/POPE">POPE</a>) and the most popular MLLM benchmark (<a
+                    href="https://mmbench.opencompass.org.cn/home">MMBench</a>). The results in Table 1~2 show that LION
+                has strong performances across various skills and also demonstrates a strong resistance to
+                hallucinations, particularly in popular and adversarial settings in POPE.
+            </p>
+
+            <!-- <div class="details" style="text-align: center" ;>
+                <img src='./assets/JiuTian-LION/images/LION-Image-level.jpg' style="width: 90%" />
+            </div>
+            <br>
+            <div class="details" style="text-align: center" ;>
+                <img src='./assets/JiuTian-LION/images/LION-Region-level.jpg' style="width: 80%" />
+            </div> -->
+            <div class="details" style="text-align: center" ;>
+                <img src='./assets/JiuTian-LION/images/LION-MMBench.jpg' style="width: 90%" />
+            </div>
+            <br>
+            <div class="details" style="text-align: center" ;>
+                <img src='./assets/JiuTian-LION/images/LION-POPE.jpg' style="width: 90%" />
+            </div>
+            <br>
+            <strong><span style="font-size:larger">Qualitative Comparison</span></strong>
+            <br>
+            <p>
+                <!-- Examples of comparision between LION and existing MLLMs(Instruct-BLIP and Shikra). -->
+            </p>
+            <div class="details" style="text-align: center" ;>
+                <img src='./assets/JiuTian-LION/images/LION-Examples.jpg' style="width: 95%">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                Bibtex
+            </div>
+            <div class="details">
+                <pre><code>
+@article{chen2023lion,
+    TODO
+}
+                </code></pre>
+            </div>
+        </section>
+
+
+        <section class='section'>
+            <div class="section-title">
+                Acknowledgement
+            </div>
+            <!-- <p>This study is supported by NTU NAP, MOE AcRF Tier 2 (T2EP20221-0033), and under the RIE2020 Industry
+                Alignment Fund – Industry Collaboration Projects (IAF-ICP) Funding Initiative, as well as cash and
+                in-kind contribution from the industry partner(s).</p> -->
+            <p>We referred to the project page of <a
+                    href="https://hongfz16.github.io/projects/AvatarCLIP.html">AvatarCLIP</a> when creating this
+                project page.</p>
+        </section>
+
+    </div>
+
+
+</body>
+
+</html>
+<style>
+    .link-container {
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .link-button {
+        background: #363636;
+        color: #fff;
+        margin: 0 5px;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 8px 20px;
+        font-size: 16px;
+        transition: background-color 0.1s ease;
+    }
+
+    .link-button:hover,
+    .link-button.active {
+        background: #111;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .icon-text {
+        vertical-align: middle;
+        height: 1em;
+        padding: 0 0.2em;
+    }
+
+    pre code {
+        background-color: #f5f5f5;
+        /* 浅灰色背景 */
+        display: block;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+</style>
